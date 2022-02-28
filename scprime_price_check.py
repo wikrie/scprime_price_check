@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 
@@ -8,3 +9,5 @@ r = requests.get(url)
 data = json.loads(r.text)
 print(data['data']['rates']['USD'])
 print(data['data']['rates']['EUR'])
+host_v = os.popen('docker exec scprime01 spc host -v').read()
+print(host_v)
