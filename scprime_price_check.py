@@ -10,4 +10,7 @@ data = json.loads(r.text)
 print(data['data']['rates']['USD'])
 print(data['data']['rates']['EUR'])
 host_v = os.popen('docker exec scprime01 spc host -v').read()
-print(host_v)
+for line in host_v:
+    if line.startswith('minstorageprice'):
+        print(line)
+        break
