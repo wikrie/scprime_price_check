@@ -9,8 +9,15 @@ r = requests.get(url)
 data = json.loads(r.text)
 print(data['data']['rates']['USD'])
 print(data['data']['rates']['EUR'])
-host_v = os.popen('docker exec scprime01 spc host -v').read()
-for line in host_v:
-    if line.startswith('minstorageprice'):
-        print(line)
+host_v = os.popen('docker exec scprime01 spc host -v').readlines()
+
+n = 1
+for e in host_v:
+    if n == 14:
+        collateral = e.split()[1]
+        print(collateral)
+    if n == 22:
+        minstorageprice = e.split()[1]
+        print(minstorageprice)
         break
+    n += 1
