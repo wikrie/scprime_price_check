@@ -6,7 +6,7 @@ To install it you need to clone the repository to your system, create the venv, 
 
 Then edit thescprime_price_check.py and edit the target price, the tolerance ans base_cmd to your needs. I am using 3.9, 0.5. As we tril the xa-miners, if you use a value to close to the standard 4.0$, some scans you will be above the limit, so better to lose some rent than to lose the incentives.
 
-You need to edit the base_cmd to what you would be using to launch spc outside its directory. So something like '/var/lib/spc'. This is am example as I use docker.
+You need to edit the base_cmd to what you would be using to launch spc outside its directory. So something like '/var/lib/spc'. This is an example as I use docker.
 
 If you are using Windows, this article will help you to setup your environment https://programwithus.com/learn/python/pip-virtualenv-windows
 
