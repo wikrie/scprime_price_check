@@ -14,7 +14,7 @@ $ source .venv/bin/activate
 
 & pip install -r requirements.txt
 
-Then edit thescprime_price_check.py and edit the target price, the tolerance ans base_cmd to your needs. I am using 3.9, 0.5. As we tril the xa-miners, if you use a value to close to the standard 4.0$, some scans you will be above the limit, so better to lose some rent than to lose the incentives.
+Then edit thescprime_price_check.py and edit the target price, the tolerance ans base_cmd to your needs. I am using 3.9, 0.5. As we follow the xa-miners, if you use a value to close to the standard 4.0$, some scans you will be above the limit, so better to lose some rent than to lose the incentives.
 
 (.venv) $ python scprime_price_check.py
 
