@@ -1,6 +1,7 @@
 import os
-import requests
 import json
+from urllib.request import Request, urlopen
+from urllib.error import URLError
 
 # config: update this values to your preferences
 target_price = 3.9 # $/TB
@@ -9,8 +10,19 @@ base_cmd = 'docker exec scprime02 spc' # the first part of the command you use t
 # end config
 
 url = 'https://api.coinbase.com/v2/exchange-rates?currency=SCP'
-r = requests.get(url)
-data = json.loads(r.text)
+req = Request(url)
+try:
+    response = urlopen(req)
+except URLError as e:
+    if hasattr(e, 'reason'):
+        print('We failed to reach a server.')
+        print('Reason: ', e.reason)
+    elif hasattr(e, 'code'):
+        print('The server couldn\'t fulfill the request.')
+        print('Error code: ', e.code)
+    sys.exit()
+
+data = json.loads(response.read())
 print(f"$/SCP: {data['data']['rates']['USD']}", flush=True)
 print(f"EUR/SCP: {data['data']['rates']['EUR']}", flush=True)
 host_v = os.popen(base_cmd + ' host -v').readlines()
