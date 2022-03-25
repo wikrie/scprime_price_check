@@ -3,8 +3,8 @@ import requests
 import json
 
 # config: update this values to your preferences
-target_price = 3.0 # $/TB
-tolerance = 1.0 # difference must be greater than this % to change the price
+target_price = 3.9 # $/TB
+tolerance = 0.5 # difference must be greater than this % to change the price
 base_cmd = 'docker exec scprime02 spc' # the first part of the command you use to call spc
 # end config
 
