@@ -5,8 +5,11 @@ This script will get the price of SCP and update SCP/TB to a target price, defin
 To install it you need to clone the repository to your system, create the venv, activate it and install the dependencies.
 
 $ git clone https://github.com/Tacombel/scprime_price_check.git
+
 $ cd scprime_price_check
+
 $ python3 -m venv .venv
+
 $ source .venv/bin/activate
 
 Then edit thescprime_price_check.py and edit the target price, the tolerance ans base_cmd to your needs. I am using 3.9, 0.5. As we tril the xa-miners, if you use a value to close to the standard 4.0$, some scans you will be above the limit, so better to lose some rent than to lose the incentives.
