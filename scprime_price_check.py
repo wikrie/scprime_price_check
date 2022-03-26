@@ -35,7 +35,11 @@ for e in host_v:
 target_scp_price = Config.target_price / float(data['data']['rates']['USD'])
 current_scp_price = minstorageprice
 
-if abs((current_scp_price / target_scp_price - 1 ) * 100) > Config.tolerance:
+if current_scp_price > target_scp_price:
+    print(f"Changing price from {current_scp_price} to {target_scp_price}", flush=True)
+    os.system(Config.base_cmd + ' host config minstorageprice ' + str(target_scp_price) + 'SCP')
+    os.system(Config.base_cmd + ' host config collateral ' + str(target_scp_price) + 'SCP')
+elif abs((current_scp_price / target_scp_price - 1 ) * 100) > Config.tolerance:
     print(f"Changing price from {current_scp_price} to {target_scp_price}", flush=True)
     os.system(Config.base_cmd + ' host config minstorageprice ' + str(target_scp_price) + 'SCP')
     os.system(Config.base_cmd + ' host config collateral ' + str(target_scp_price) + 'SCP')
