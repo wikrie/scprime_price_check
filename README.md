@@ -39,7 +39,8 @@ $ git pull
   - Enter the exact directory of your spc.exe - example `base_cmd = 'D:\SCPrime\spc.exe'`
 - Open CMD
   - Go to the folder where the script is (for example cd D:\SCPrime\scprime_price_check)
-  - Type the command python3 scprime_price_check.py
+  - Type python --version. If you get Python 3.x.x everything is ok.
+  - Type the command python scprime_price_check.py (If in the previous step you got Python 2.x.x you should use python3 instead in this command)
   - If you see the script running, you are good to continue
 - Create a new text file
   - Name it pricechecker.bat
@@ -47,7 +48,7 @@ $ git pull
   - The file should contain three lines if the folder is located on a drive other than C, or two lines if it is in the C drive
 	- cd - the location of the folder (for example cd D:\SCPrime\scprime_price_check)
 	- If the file is located on another drive (not C), you should put in the drive letter followed by : (for example D:)
-	- python3 scprime_price_check.py
+	- python scprime_price_check.py
 You can now add this file to the task scheduler and you are good to go!
 
 -----------------------------------------------
