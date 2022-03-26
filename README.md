@@ -16,6 +16,10 @@ Then:
 
 $ python3 scprime_price_check.py
 
+Afterwards, to update the script you only need to execute, on the directory where scprime_price_checker.py is located
+
+$ git pull
+
 ---
 
 ## Instructions for Windows (no Python experience)
