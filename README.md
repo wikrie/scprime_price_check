@@ -16,7 +16,37 @@ Then:
 
 $ python3 scprime_price_check.py
 
-If you are using Windows, it works, but you will need to install python 3.x and Git. You can avoid installing git just by copying the content of the .py file in this repository to an appropiately named file in your system
+---
+
+## Instructions for Windows (no Python experience)
+
+- Download Python
+  - Go to https://www.python.org/downloads/release/python-379/ and download the executable installer for x64 or x86
+  - Install it
+  - Restart the computer
+- Download the repo as a zip file
+  - Extract it to your SCPrime folder
+  - Rename the folder (repo) to scprime_price_check
+- Edit the settings
+  - Open the folder
+  - Edit the file scprime_price_check.py with notepad
+  - Line 8 - set the target price
+  - Line 9 - set the threshold percentage (update the price if the price changes with this percent)
+  - Line 10 - enter the exact directory of your spc.exe - example `base_cmd = 'D:\SCPrime\spc.exe'`
+- Open CMD
+  - Go to the folder where the script is (for example cd D:\SCPrime\scprime_price_check)
+  - Type the command python3 scprime_price_check.py
+  - If you see the script running, you are good to continue
+- Create a new text file
+  - Name it pricechecker.bat
+  - Edit it with notepad
+  - The file should contain three lines if the folder is located on a drive other than C, or two lines if it is in the C drive
+	- cd - the location of the folder (for example cd D:\SCPrime\scprime_price_check)
+	- If the file is located on another drive (not C), you should put in the drive letter followed by : (for example D:)
+	- python3 scprime_price_check.py
+You can now add this file to the task scheduler and you are good to go!
+
+-----------------------------------------------
 
 Donations welcome:
 
