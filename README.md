@@ -1,6 +1,6 @@
 # scprime_price_check
 
-This script will get the price of SCP and update SCP/TB to a target price, defined in the script, if the difference is greater than a percentage also defined in the script.
+This script will get the price of SCP and update SCP/TB to a target price, defined in the script, if the difference is greater than a percentage also defined in the config file. It will always update the price if the new price is inferior to the current one.
 
 To install it you need to clone the repository to your system.
 
@@ -8,7 +8,7 @@ $ git clone https://github.com/Tacombel/scprime_price_check.git
 
 $ cd scprime_price_check
 
-Then edit the scprime_price_check.py and chabge the target price, the tolerance and base_cmd to your needs. I am using 3.9, 0.5. As we follow the xa-miners, if you use a value to close to the standard 4.0$, some scans you will be above the limit, so better to lose some rent than to lose the incentives.
+Then edit the config.py and change the target price, the tolerance and base_cmd to your needs. I am using 3.9, 0.5. As we follow the xa-miners, if you use a value to close to the standard 4.0$, at some scans you will be above the limit, so better to lose some rent than to lose the incentives.
 
 You need to edit the base_cmd to what you would be using to launch spc outside its directory. So something like '/var/lib/spc'. This is an example as I use docker.
 
@@ -29,10 +29,10 @@ $ python3 scprime_price_check.py
   - Rename the folder (repo) to scprime_price_check
 - Edit the settings
   - Open the folder
-  - Edit the file scprime_price_check.py with notepad
-  - Line 8 - set the target price
-  - Line 9 - set the threshold percentage (update the price if the price changes with this percent)
-  - Line 10 - enter the exact directory of your spc.exe - example `base_cmd = 'D:\SCPrime\spc.exe'`
+  - Edit the file config.py with notepad
+  - Set the target price
+  - Set the threshold percentage (update the price if the price changes with this percent)
+  - Enter the exact directory of your spc.exe - example `base_cmd = 'D:\SCPrime\spc.exe'`
 - Open CMD
   - Go to the folder where the script is (for example cd D:\SCPrime\scprime_price_check)
   - Type the command python3 scprime_price_check.py
