@@ -1,4 +1,4 @@
-#v0.2
+#v0.3
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
