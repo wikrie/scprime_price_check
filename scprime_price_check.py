@@ -1,4 +1,5 @@
 import os
+import sys
 from price import get_price
 from config import Config
 
@@ -10,8 +11,10 @@ def main():
             minstorageprice = e.split()[1]
             break
         n += 1
-
-    target_scp_price = str(round(float(get_price()) * 0.994, 3))
+    reference_price = get_price()
+    if reference_price == 'no data':
+        sys.exit()
+    target_scp_price = str(round(float(reference_price) * 0.994, 3))
     print(f'Target price {target_scp_price}')
     print(f'Current price {minstorageprice}')
 

@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 
 
@@ -16,10 +18,19 @@ def get_price():
 
     with webdriver.Chrome(options=options, service=service) as driver:
         driver.get(url)
-        sleep(10)
-        price = driver.find_element_by_xpath(xpath).text
-        print(f'Reference price = {price}')
-    return price
+        sleep(5)
+        n = 0
+        while n < 5:
+            try:
+                price = driver.find_element(by=By.XPATH, value=xpath).text
+                print(f'Reference price = {price}')
+                return price
+            except NoSuchElementException:
+                print(f'Grafana page not loaded')
+                n += 1
+                sleep(5)
+    print(f'Tried 5 times without luck')
+    return 'no data'
 
 if __name__ == "__main__":
     get_price()
