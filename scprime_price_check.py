@@ -17,11 +17,11 @@ def main():
     if reference_price == 'no data':
         sys.exit()
     target_scp_price = str(round(float(reference_price) * 0.994, 3))
-    print(f'Target price {target_scp_price}')
-    print(f'Current price {minstorageprice}')
+    print(f'Target price {target_scp_price}', flush=True)
+    print(f'Current price {minstorageprice}', flush=True)
 
     if minstorageprice == target_scp_price:
-        print(f'No change')
+        print(f'No change', flush=True)
     else:
         print(f"Changing price to {target_scp_price}", flush=True)
         os.system(Config.base_cmd + ' host config minstorageprice ' + str(target_scp_price) + 'SCP')

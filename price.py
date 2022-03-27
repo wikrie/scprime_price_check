@@ -25,13 +25,13 @@ def get_price():
         while n < 5:
             try:
                 price = driver.find_element(by=By.XPATH, value=xpath).text
-                print(f'Reference price = {price}')
+                print(f'Reference price = {price}', flush=True)
                 return price
             except NoSuchElementException:
-                print(f'Grafana page not loaded')
+                print(f'Grafana page not loaded', flush=True)
                 n += 1
                 sleep(5)
-    print(f'Tried 5 times without luck')
+    print(f'Tried 5 times without luck', flush=True)
     return 'no data'
 
 if __name__ == "__main__":
