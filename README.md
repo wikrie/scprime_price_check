@@ -45,28 +45,28 @@ $ sudo journalctl -n1000|grep checkprice-cron
 ## Instructions for Windows
 
 - Download Python
-    Go to https://www.python.org/downloads/release/python-379/ and download the executable installer for x64 or x86
-    Install it
-    Restart the computer
+    - Go to https://www.python.org/downloads/release/python-379/ and download the executable installer for x64 or x86
+    - Install it
+    - Restart the computer
 - Download the repo as a zip file
-    Extract it to your SCPrime folder
-    Rename the folder (repo) to scprime_price_check
+    - Extract it to your SCPrime folder
+    - Rename the folder (repo) to scprime_price_check
 - Edit the settings
-    Open the folder
-    Edit the file config.py with notepad
-    Enter the exact directory of your spc.exe - example base_cmd = 'D:\SCPrime\spc.exe'
+    - Open the folder
+    - Edit the file config.py with notepad
+    - Enter the exact directory of your spc.exe - example base_cmd = 'D:\SCPrime\spc.exe'
 - Open CMD
-    Go to the folder where the script is (for example cd D:\SCPrime\scprime_price_check)
-    Type python --version. If you get Python 3.x.x everything is ok.
-    Type the command python scprime_price_check.py (If in the previous step you got Python 2.x.x you should use python3 instead in this command)
-    If you see the script running, you are good to continue
+    - Go to the folder where the script is (for example cd D:\SCPrime\scprime_price_check)
+    - Type python --version. If you get Python 3.x.x everything is ok.
+    - Type the command python scprime_price_check.py (If in the previous step you got Python 2.x.x you should use python3 instead in this command)
+    - If you see the script running, you are good to continue
 - Create a new text file
-    Name it pricechecker.bat
-    Edit it with notepad
-    The file should contain three lines if the folder is located on a drive other than C, or two lines if it is in the C drive
-        cd - the location of the folder (for example cd D:\SCPrime\scprime_price_check)
-        If the file is located on another drive (not C), you should put in the drive letter followed by : (for example D:)
-        python scprime_price_check.py You can now add this file to the task scheduler and you are good to go!
+    - Name it pricechecker.bat
+    - Edit it with notepad
+    - The file should contain three lines if the folder is located on a drive other than C, or two lines if it is in the C drive
+        - cd - the location of the folder (for example cd D:\SCPrime\scprime_price_check)
+        - If the file is located on another drive (not C), you should put in the drive letter followed by : (for example D:)
+        - python scprime_price_check.py You can now add this file to the task scheduler and you are good to go!
 
 -----------------------------------------------
 
