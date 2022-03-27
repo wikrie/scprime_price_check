@@ -1,24 +1,22 @@
 # scprime_price_check
 
+---
+
 This script will get the price of SCP and update SCP/TB to a target price, defined in the script, if the difference is greater than a percentage also defined in the config file. It will always update the price if the new price is inferior to the current one.
 
-To install it you need to clone the repository to your system.
+## Instructions for Linux
 
-$ git clone https://github.com/Tacombel/scprime_price_check.git
+To install it donwload from the releases page and unzip in your system.
 
 $ cd scprime_price_check
 
-Then edit the config.py and change the target price, the tolerance and base_cmd to your needs. I am using 3.9, 0.5. As we follow the xa-miners, if you use a value to close to the standard 4.0$, at some scans you will be above the limit, so better to lose some rent than to lose the incentives.
+Edit the config.py and change the target price, the tolerance and base_cmd to your needs. I am using 3.9, 0.5. As we follow the xa-miners, if you use a value to close to the standard 4.0$, at some scans you will be above the limit, so better to lose some rent than to lose the incentives.
 
-You need to edit the base_cmd to what you would be using to launch spc outside its directory. So something like '/var/lib/spc'. This is an example as I use docker.
+You need to edit the base_cmd to match what you would be using to launch spc outside its directory. So something like '/var/lib/spc'.
 
 Then:
 
 $ python3 scprime_price_check.py
-
-Afterwards, to update the script you only need to execute, on the directory where scprime_price_checker.py is located
-
-$ git pull
 
 ---
 
