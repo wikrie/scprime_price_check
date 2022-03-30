@@ -22,7 +22,7 @@ $ source .venv/bin/activate
 
 Install python dependencies
 
-$ pip install -r requeriments.txt
+$ pip install -r requirements.txt
 
 Edit the config.py and change base_cmd to your needs. You need to edit it to match what you would be using to launch spc outside its directory. So something like '/var/lib/spc'. Test the script.
 
