@@ -5,7 +5,6 @@ from requests.structures import CaseInsensitiveDict
 import json
 import sys
 
-
 def get_price():
     url = 'https://grafana.scpri.me/api/ds/query'
     headers = CaseInsensitiveDict()
