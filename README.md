@@ -28,7 +28,7 @@ Edit the config.py and change base_cmd to your needs. You need to edit it to mat
 
 $ python scprime_price_check.py
 
-You will need a cronjob to execute it periodicaly.
+You will need a cronjob to execute it periodicaly. It must be the crontab of the user who launchs spd.
 
 $ crontab -e
 
@@ -38,7 +38,7 @@ And add a line similar to this one, that will execute the script every 2 minutes
 
 You will be able to check the journal to see it working like this
 
-$ sudo journalctl -n1000|grep checkprice-cron
+$ sudo journalctl -n100|grep checkprice-cron
 
 ---
 
