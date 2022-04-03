@@ -22,7 +22,7 @@ $ source .venv/bin/activate
 
 Install python dependencies
 
-$ pip install -r requeriments.txt
+$ pip install -r requirements.txt
 
 Edit the config.py and change base_cmd to your needs. You need to edit it to match what you would be using to launch spc outside its directory. So something like '/var/lib/spc'. Test the script.
 
@@ -61,7 +61,7 @@ $ sudo journalctl -n100|grep checkprice-cron
     - Type python -m venv venv (If in the previous step you got Python 2.x.x you should use python3 instead in this command and the next time you call python)
     - Type venv\Scripts\activate.bat
     - At the beginning of the command promt you should now see (venv)
-    - Type pip install -r requeriments.txt
+    - Type pip install -r requirements.txt
     - Type the python scprime_price_check.py
     - If you see the script running, you are good to continue
 - Create a new text file
