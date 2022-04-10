@@ -7,22 +7,22 @@ from config import Config
 
 url = 'https://grafana.scpri.me/api/ds/query'
 
-def get_price(provider_primary, provider_secondary):
+def get_price():
 
-    status = get_status(provider_primary)
-    print(f'Status of Primary Provider= {status} :: 0=Offline :: 1=Online :: 2=Error')
+    status = get_status(Config.provider_primary)
+    print(f'Status of Primary Provider= {status} :: 0=Offline :: 1=Online :: 2=Error', flush=True)
     if status == 1:
-        price = get_storageprice(provider_primary)
-        print(f'Reference price on Primary Provider = {price}')
+        price = get_storageprice(Config.provider_primary)
+        print(f'Reference price on Primary Provider = {price}', flush=True)
     else:
-        status = get_status(provider_secondary)
-        print(f'Status of Secondary Provider = {status} :: 0=Offline :: 1=Online :: 2=Error')
+        status = get_status(Config.provider_secondary)
+        print(f'Status of Secondary Provider = {status} :: 0=Offline :: 1=Online :: 2=Error', flush=True)
         if status == 1:
-            price = get_storageprice(provider_secondary)
-            print(f'Reference price on Secondary Provider = {price}')
+            price = get_storageprice(Config.provider_secondary)
+            print(f'Reference price on Secondary Provider = {price}', flush=True)
         else:
+            print(f'Both providers are offline. Edit config.py and place the Id of a working XM', flush=True)
             price = 'no data'
-
     return price
 
 
@@ -38,7 +38,7 @@ def get_status(publickey):
     try:
         status = r['results']['A']['frames'][0]['data']['values'][0][0]
     except:
-        print("Error processing JSON")
+        print("Error processing JSON", flush=True)
         status = 2
 
     return status
@@ -55,11 +55,11 @@ def get_storageprice(publickey):
     try:
         storageprice = r['results']['A']['frames'][0]['data']['values'][2][0]
     except:
-        print("Error processing JSON")
+        print("Error processing JSON", flush=True)
         storageprice = "no data"
 
     return storageprice
 
 
 if __name__ == "__main__":
-    get_price(Config.provider_primary, Config.provider_secondary)
+    get_price()

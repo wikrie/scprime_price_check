@@ -13,7 +13,7 @@ def main():
             minstorageprice = e.split()[1]
             break
         n += 1
-    reference_price = get_price(Config.provider_primary, Config.provider_secondary)
+    reference_price = get_price()
     if reference_price == 'no data':
         sys.exit()
     target_scp_price = str(round(float(reference_price) * 0.994, 3))
