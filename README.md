@@ -2,7 +2,7 @@
 
 ---
 
-This script will get the current price from a XA-Miner and update your host SCP/TB to 0.994x of it. This is because the max change in price in a XA is 0.05, so being 0.06 below it we guarantee to be below the new price when it changes.
+This script will get the current price from scpri.me Price TArgets Public and update your host SCP/TB to 0.994x of it. This is because the max change in price in a XA is 0.05, so being 0.06 below it we guarantee to be below the new price when it changes.
 
 Thanks to @vmvelev for his help.
 
