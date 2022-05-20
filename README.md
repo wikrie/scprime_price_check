@@ -1,5 +1,7 @@
 # scprime_price_check
 
+Fork for my personal Settings and add 2nd Node so update should be done for 2 Provider Nodes.
+Please use original this is only working for my settings!!!!
 ---
 
 This script will get the current price from scpri.me Price TArgets Public and update your host SCP/TB to 0.994x of it. This is because the max change in price in a XA is 0.05, so being 0.06 below it we guarantee to be below the new price when it changes.
