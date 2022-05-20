@@ -47,6 +47,8 @@ def main():
         print(f"Changing price to {target_scp_price}", flush=True)
         os.system(Config.base_cmd + ' host config minstorageprice ' + str(target_scp_price) + 'SCP')
         os.system(Config.base_cmd + ' host config collateral ' + str(target_scp_price) + 'SCP')
+        os.system(Config.base2_cmd + ' host config minstorageprice ' + str(target_scp_price) + 'SCP')
+        os.system(Config.base2_cmd + ' host config collateral ' + str(target_scp_price) + 'SCP')
         # os.system(Config.base_cmd + ' host -v')
 
 if __name__ == '__main__':
