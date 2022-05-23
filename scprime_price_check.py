@@ -37,7 +37,7 @@ def main():
     reference_price = get_storageprice()
     if reference_price == 'no data':
         sys.exit()
-    target_scp_price = str(round(float(reference_price) * 0.994, 3))
+    target_scp_price = str(round(float(reference_price) * 0.994, 2))
     print(f'Target price {target_scp_price}', flush=True)
     print(f'Current price {minstorageprice}', flush=True)
 
